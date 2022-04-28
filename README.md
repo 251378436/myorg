@@ -87,7 +87,9 @@ Run `nx graph` to see a diagram of the dependencies of your projects.
 
 Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
 
-
+docker build -f ./apps/todos/Dockerfile . -t myorg/todos:v1
+docker build -f ./apps/todos2/Dockerfile . -t myorg/todos2:v1
+docker build -f ./apps/api/Dockerfile . -t myorg/api:v1
 
 
 

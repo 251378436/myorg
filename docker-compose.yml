@@ -1,0 +1,6 @@
+version: '3.9'
+services:
+  todos:
+    image: myorg/todos:v1
+    ports:
+      - 8888:8888
