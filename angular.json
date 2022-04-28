@@ -5,6 +5,8 @@
     "data": "libs/data",
     "todos": "apps/todos",
     "todos-e2e": "apps/todos-e2e",
+    "todos2": "apps/todos2",
+    "todos2-e2e": "apps/todos2-e2e",
     "ui": "libs/ui"
   }
 }
