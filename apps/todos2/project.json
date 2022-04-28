@@ -62,6 +62,7 @@
       },
       "defaultConfiguration": "development",
       "options": {
+        "port": 4201, 
         "proxyConfig": "apps/todos/proxy.conf.json"
       }
     },
