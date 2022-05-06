@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todosapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todosapi
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5 
+  template:
+    metadata:
+      labels:
+        app: todosapi
+    spec:
+      nodeSelector:
+        "kubernetes.io/os": linux
+      containers:
+      - name: todosapi
+        image: todosbolong.azurecr.io/todosapi:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: 250m
+          limits:
+            cpu: 500m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myorg-api-service
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: todosapi

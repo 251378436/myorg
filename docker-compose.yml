@@ -1,6 +1,9 @@
 version: '3.9'
 services:
-  todos:
-    image: myorg/todos:v1
+  api:
+    container_name: myorg-api
+    build:
+      context: ./
+      dockerfile: ./apps/api/Dockerfile
     ports:
-      - 8888:8888
+      - 8888:80
